@@ -1,0 +1,150 @@
+:root {
+
+    --clr-primary-pers-1: hsl(263, 55%, 52%);
+    --clr-primary-pers-2: hsl(217, 19%, 35%);
+    --clr-primary-pers-3: hsl(219, 29%, 14%);
+    --clr-primary-pers-girls: hsl(0, 0%, 100%);
+
+    --clr-neutral-gb: hsl(0, 0%, 81%);
+    --clr-neutral-bg: hsl(210, 46%, 95%);
+
+}
+
+* {
+    display: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--clr-neutral-bg);
+}
+
+.grid-item-1 {
+    background-color: var(--clr-primary-pers-1);
+    
+}
+
+/*.grid-item-1 {
+    background: url(./images/bg-pattern-quotation.svg) no-repeat;
+    
+}*/
+
+
+.grid-item-2 {
+    background-color: var(--clr-primary-pers-2);
+}
+
+.grid-item-3,
+.grid-item-5 {
+    background-color: var(--clr-primary-pers-girls);
+}
+
+.grid-item-4 {
+    background-color: var(--clr-primary-pers-3);
+}
+
+.color-1 {
+    color: var(--clr-primary-pers-girls);
+}
+
+.color-2 {
+    color: var(--clr-primary-pers-3);
+}
+
+.vg-1 {
+    color: var(--clr-primary-pers-girls);
+    opacity: 50%;
+}
+
+.vg-2 {
+    color: var(--clr-primary-pers-3);
+    opacity: 50%;
+}
+
+.quote-1 {
+    color: var(--clr-primary-pers-girls);
+    opacity: 70%;
+}
+
+.quote-2 {
+    color: var(--clr-primary-pers-3);
+    opacity: 70%;
+}
+
+
+
+body {
+    font-size: 0.813rem;
+    font-family: "Barlow Semi Condensed";
+    line-height: 1.3;
+    font-weight: 500;
+}
+
+h1 {
+    font-weight: 500;
+    line-height: 1.2;
+    font-size: 1.23rem;
+}
+
+
+
+body {
+    display: grid;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(4, 16rem);
+    grid-template-rows: 16.5rem 16.5rem;
+    grid-gap: 20px;
+}
+
+.grid-item-1,
+.grid-item-4 {
+    grid-column: span 2;
+}
+
+.grid-item-5 {
+    grid-row: span 2;
+}
+
+h1 {
+    padding-top: .6em;
+    padding-bottom: 1em;
+}
+
+img {
+    float:left;
+    border-radius: 50%;
+    width: 1.5rem;
+    margin-top: 0.2em;
+    margin-right: 1em;
+}
+
+.grid-item-1,
+.grid-item-2,
+.grid-item-3,
+.grid-item-4,
+.grid-item-5 {
+    border-radius: .5rem;
+    padding: 2em;
+}
+
+
+.quote-1,
+.quote-2 {
+    padding-right: 1.2em;
+}
+
+.grid-item-3 h1 {
+    padding-right: 1em;
+}
+
+.vg-1, 
+.vg-2 {
+    font-size: .7rem;
+}
