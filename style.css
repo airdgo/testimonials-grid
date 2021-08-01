@@ -90,17 +90,21 @@ h1 {
 
 
 body {
-    display: grid;
-    height: 100vh;
+    display: flex;
+    min-height: 100vh;
     justify-content: center;
     align-items: center;
+    margin: 5em 0;
 }
 
 main {
     display: grid;
-    grid-template-columns: repeat(4, 16rem);
-    grid-template-rows: 16.5rem 16.5rem;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    grid-template-rows: repeat(2, auto);
     grid-gap: 20px;
+    width: 70.5%;
+    max-width: 70rem;
 }
 
 .grid-item-1,
@@ -147,4 +151,37 @@ img {
 .vg-1, 
 .vg-2 {
     font-size: .7rem;
+}
+
+.grid-item-1 {
+    z-index: 1;
+}
+
+
+@media all and (max-width: 1447px) {
+    .grid-item-3 {
+        grid-column: span 2;
+    }
+}
+
+@media all and (max-width: 1077px) {
+
+    .grid-item-3 {
+        grid-column: span 1;
+    }
+}
+
+@media all and (max-width: 700px) {
+    main {
+        min-width: 300px;
+    }
+
+    .grid-item-1,
+    .grid-item-2,
+    .grid-item-3,
+    .grid-item-4,
+    .grid-item-5 {
+        grid-row: span 1;
+        grid-column: span 1;
+}
 }
