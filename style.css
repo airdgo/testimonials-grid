@@ -16,6 +16,27 @@
     padding: 0;
 }
 
+
+/* Table of contents
+
+1. Global stlyes
+
+2. Typography
+
+3. Components
+
+4. Animation
+
+5. Media Query
+
+*/
+
+
+/* ================
+   1. Global styles
+   ================ */
+
+
 body {
     background-color: var(--clr-neutral-bg);
 }
@@ -24,12 +45,6 @@ body {
     background-color: var(--clr-primary-pers-1);
     
 }
-
-/*.grid-item-1 {
-    background: url(./images/bg-pattern-quotation.svg) no-repeat;
-    
-}*/
-
 
 .grid-item-2 {
     background-color: var(--clr-primary-pers-2);
@@ -73,6 +88,10 @@ body {
 }
 
 
+/* ================
+   2. Typography
+   ================ */
+
 
 body {
     font-size: 0.813rem;
@@ -88,13 +107,16 @@ h1 {
 }
 
 
+/* ================
+   3. Components
+   ================ */
+
 
 body {
     display: flex;
     min-height: 100vh;
     justify-content: center;
     align-items: center;
-    margin: 5em 0;
 }
 
 main {
@@ -107,6 +129,11 @@ main {
     max-width: 70rem;
 }
 
+.card {
+    border-radius: .5rem;
+    padding: 2em;
+}
+
 .grid-item-1,
 .grid-item-4 {
     grid-column: span 2;
@@ -116,36 +143,38 @@ main {
     grid-row: span 2;
 }
 
-h1 {
-    padding-top: .6em;
-    padding-bottom: 1em;
-}
-
 img {
     float:left;
     border-radius: 50%;
     width: 1.5rem;
     margin-top: 0.2em;
     margin-right: 1em;
+    border: 2px solid rgba(255, 255, 255, 0.5);
 }
 
-.grid-item-1,
-.grid-item-2,
-.grid-item-3,
-.grid-item-4,
-.grid-item-5 {
-    border-radius: .5rem;
-    padding: 2em;
+h1 {
+    position: relative;
+    padding-top: .6em;
+    padding-bottom: 1em;
+    z-index: 3;
 }
 
+.grid-item-1 {
+    position: relative;
+    z-index: 1;
+}
+
+.grid-item-1::before {
+    content: url(/images/bg-pattern-quotation.svg);
+    position: absolute;
+    top: 0;
+    right: 5rem;
+    z-index: 2;
+}
 
 .quote-1,
 .quote-2 {
     padding-right: 1.2em;
-}
-
-.grid-item-3 h1 {
-    padding-right: 1em;
 }
 
 .vg-1, 
@@ -153,12 +182,33 @@ img {
     font-size: .7rem;
 }
 
-.grid-item-1 {
-    z-index: 1;
+
+/* ================
+   4. Animation
+   ================ */
+
+
+.card {
+    transition: transform .4s;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.card:hover {
+    transform: scale(1.03);
+    box-shadow: inset rgba(255, 255, 255, 0.1) 0px 5px 80px;
+    
 }
 
 
+/* ================
+   5. Media Query
+   ================ */
+
+
 @media all and (max-width: 1447px) {
+    body{
+        margin: 5em 0;
+    }
     .grid-item-3 {
         grid-column: span 2;
     }
@@ -176,11 +226,11 @@ img {
         min-width: 300px;
     }
 
-    .grid-item-1,
-    .grid-item-2,
-    .grid-item-3,
-    .grid-item-4,
-    .grid-item-5 {
+    .grid-item-1::before {
+        right: 1rem;
+    }
+
+    .card {
         grid-row: span 1;
         grid-column: span 1;
 }
