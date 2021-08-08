@@ -8,6 +8,12 @@
     --clr-neutral-gb: hsl(0, 0%, 81%);
     --clr-neutral-bg: hsl(210, 46%, 95%);
 
+    --animation-card-1: 600ms;
+    --animation-card-2: calc(var(--animation-card-1) + 200ms);
+    --animation-card-3: calc(var(--animation-card-2) + 200ms);
+    --animation-card-4: calc(var(--animation-card-3) + 200ms);
+    --animation-card-5: calc(var(--animation-card-4) + 200ms);
+    
 }
 
 * {
@@ -197,6 +203,76 @@ h1 {
     transform: scale(1.03);
     box-shadow: inset rgba(255, 255, 255, 0.1) 0px 5px 80px;
     
+}
+
+.grid-item-1 {
+    animation: card-1 var(--animation-card-1) ease-out;
+}
+
+.grid-item-2 {
+    animation: card-2 var(--animation-card-2) ease-out;
+}
+
+.grid-item-3 {
+    animation: card-3 var(--animation-card-3) ease-out;
+}
+
+.grid-item-4 {
+    animation: card-4 var(--animation-card-4) ease-out;
+}
+
+.grid-item-5 {
+    animation: card-5 var(--animation-card-5) ease-out;
+}
+
+@keyframes card-1 {
+    0% {
+        transform: translateX(-1000%)
+    }
+
+    100% {
+        transform: translateX(0)
+    }
+}
+
+@keyframes card-2 {
+    0% {
+        transform: translateY(-1000%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes card-3 {
+    0% {
+        transform: translateX(-1000%)
+    }
+
+    100% {
+        transform: translateX(0)
+    }
+}
+
+@keyframes card-4 {
+    0% {
+        transform: translateY(1000%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes card-5 {
+    0% {
+        transform: translateX(1000%)
+    }
+
+    100% {
+        transform: translateX(0)
+    }
 }
 
 
