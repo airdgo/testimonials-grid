@@ -8,11 +8,11 @@
     --clr-neutral-gb: hsl(0, 0%, 81%);
     --clr-neutral-bg: hsl(210, 46%, 95%);
 
-    --animation-card-1: 600ms;
-    --animation-card-2: calc(var(--animation-card-1) + 200ms);
-    --animation-card-3: calc(var(--animation-card-2) + 200ms);
-    --animation-card-4: calc(var(--animation-card-3) + 200ms);
-    --animation-card-5: calc(var(--animation-card-4) + 200ms);
+    --animation-card-1: 500ms;
+    --animation-card-2: calc(var(--animation-card-1) + 100ms);
+    --animation-card-3: calc(var(--animation-card-2) + 100ms);
+    --animation-card-4: calc(var(--animation-card-3) + 100ms);
+    --animation-card-5: calc(var(--animation-card-4) + 100ms);
     
 }
 
@@ -227,51 +227,61 @@ h1 {
 
 @keyframes card-1 {
     0% {
-        transform: translateX(-1000%)
+        transform: translateX(-50%);
+        opacity: 0;
     }
 
     100% {
-        transform: translateX(0)
+        transform: translateX(0);
+        opacity: 1;
     }
 }
 
 @keyframes card-2 {
     0% {
-        transform: translateY(-1000%);
+        transform: translateY(-30%);
+        opacity: 0;
     }
 
     100% {
         transform: translateY(0);
+        opacity: 1;
     }
 }
 
 @keyframes card-3 {
     0% {
-        transform: translateX(-1000%)
+        transform: translateX(-50%);
+        opacity: 0;
     }
 
     100% {
-        transform: translateX(0)
+        transform: translateX(0);
+        opacity: 1;
     }
 }
 
 @keyframes card-4 {
     0% {
-        transform: translateY(1000%);
+        transform: translateY(30%);
+        opacity: 0;
     }
 
     100% {
         transform: translateY(0);
+        opacity: 1;
     }
 }
 
 @keyframes card-5 {
     0% {
-        transform: translateX(1000%)
+        transform: translateX(50%);
+        opacity: 0;
     }
 
     100% {
-        transform: translateX(0)
+        transform: translateX(0);
+        opacity: 1;
     }
 }
 
@@ -288,12 +298,60 @@ h1 {
     .grid-item-3 {
         grid-column: span 2;
     }
+
+    @keyframes card-3 {
+        0% {
+            transform: translateX(50%);
+            opacity: 0;
+        }
+    
+        100% {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes card-5 {
+        0% {
+            transform: translateX(-50%);
+            opacity: 0;
+        }
+    
+        100% {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
 }
 
 @media all and (max-width: 1077px) {
 
     .grid-item-3 {
         grid-column: span 1;
+    }
+
+    @keyframes card-3 {
+        0% {
+            transform: translateX(-50%);
+            opacity: 0;
+        }
+    
+        100% {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes card-5 {
+        0% {
+            transform: translateX(50%);
+            opacity: 0;
+        }
+    
+        100% {
+            transform: translateX(0);
+            opacity: 1;
+        }
     }
 }
 
@@ -310,4 +368,13 @@ h1 {
         grid-row: span 1;
         grid-column: span 1;
 }
+
+    *{
+        -webkit-animation: none !important;
+        -moz-animation: none !important;
+        -o-animation: none !important;
+        -ms-animation: none !important;
+        animation: none !important;
+}
+
 }
